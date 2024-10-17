@@ -1,0 +1,20 @@
+public class OverloadArea
+{
+public static float area(float side)
+{
+return (side*side);
+}
+public static float area (float len, float bre)
+{
+return (len*bre);
+}
+public static void main(String args[])
+{
+float f1=Float.parseFloat(args[0]);
+float f2=Float.parseFloat(args[1]);
+float f3=area (f1);
+float f4=area (f1, f2);
+System.out.println("Area of square for side in meters "+String.format("%.2f", f1) +": "+String.format("%.4f",f3));
+System.out.println("Area of rectangle for length and breadth in meters "+String.format("%.2f", f1) +", "+String.format("%.2f", f2) +": "+String.format("%.7f",f4));
+}
+} 
