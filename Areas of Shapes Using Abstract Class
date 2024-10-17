@@ -1,0 +1,52 @@
+import java.util.Scanner;
+
+// Abstract class Shape
+abstract class Shape {
+    // Abstract methods for calculating area and perimeter
+    abstract double calculateArea();
+    abstract double calculatePerimeter();
+    
+    // Concrete method to display details of the shape
+    public void displayDetails() {
+        System.out.println("Shape details:");
+        System.out.println("Area: " + calculateArea());
+        System.out.println("Perimeter: " + calculatePerimeter());
+    }
+}
+
+// Circle class extending Shape
+class Circle extends Shape {
+    double radius;
+
+    // Constructor to initialize radius
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    // Implement the calculateArea method
+    @Override
+    double calculateArea() {
+        return Math.PI * radius * radius;
+    }
+
+    // Implement the calculatePerimeter method
+    @Override
+    double calculatePerimeter() {
+        return 2 * Math.PI * radius;
+    }
+
+    // Main method to test the program
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the radius of the circle: ");
+        double radius = scanner.nextDouble();
+        
+        // Create Circle object and display its details
+        Circle circle = new Circle(radius);
+        circle.displayDetails();
+        
+        scanner.close();
+    }
+}
+
+
