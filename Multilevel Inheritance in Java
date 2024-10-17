@@ -1,0 +1,57 @@
+import java.util.Scanner;
+public class MultilevelInheritance{
+	public static void main(String args[]) {
+	    Scanner s=new Scanner(System.in);
+	    Scanner sc=new Scanner(System.in);
+		Result r = new Result();
+		System.out.print("Id: ");
+		int id=s.nextInt();
+		System.out.print("Name: ");
+		String name = sc.nextLine();
+		r.setData(id, name);
+		System.out.print("Java marks: ");
+		float jv=s.nextFloat();
+		System.out.print("C marks: ");
+		float c=s.nextFloat();
+		System.out.print("CPP marks: ");
+		float cpp=s.nextFloat();
+        r.displayData();
+		r.setMarks(jv,c,cpp);
+		r.displayMarks();
+		r.compute();
+		r.showResult();
+	}
+}
+class Result {
+	int id;
+	String name;
+	float java,cpp,c,total,av;
+	void setData(int id,String name) {
+		this.id=id;
+		this.name=name;
+	}
+	void setMarks(float java,float c,float cpp) {
+		this.java=java;
+		this.c=c;
+		this.cpp=cpp;
+	}
+	void displayData() {
+		System.out.println("Id : "+id);
+		System.out.println("Name : "+name);
+	}
+	void displayMarks() {
+		System.out.println("Java marks : "+java);
+		System.out.println("C marks : "+c);
+		System.out.println("Cpp marks : "+cpp);
+	}
+	void compute() {
+		total=java+c+cpp;
+		System.out.println("Total : "+total);
+	}
+	void showResult() {
+		av=total/3;
+		System.out.println("Avg : "+av);
+	}
+}
+
+
